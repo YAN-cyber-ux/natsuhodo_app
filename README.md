@@ -1,24 +1,21 @@
-# README
+## **サービス名**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+懐かしいにもほどがある!
 
-Things you may want to cover:
+## **サービス概要**
 
-* Ruby version
+今となっては懐かしい物や言葉を共有し、交流を深めるSNSアプリです。
 
-* System dependencies
+## サービスコンセプト
 
-* Configuration
+「忘れかけていたけど、確かに昔そういうのあったよね!」
 
-* Database creation
+こんな感じで、昔のことを思い出して、他の人と打ち解けた経験がある人は多いかと思います。
 
-* Database initialization
+そんな「懐かしい!」ことを大喜利のような形式で共有して、色んな人が打ち解けるような場を作りたいと思っています。
 
-* How to run the test suite
+大喜利形式で、タイトルに懐かしい言葉や物を一言で書き、本文にはそれについてのその人なりの思い出を記載し、共有します。
 
-* Services (job queues, cache servers, search engines, etc.)
+各投稿には、なつポイント(仮)と呼ばれる点数を用意し、各投稿に対して各ユーザが最大3ポイントまで点数をつけられる仕組みになっています。
 
-* Deployment instructions
-
-* ...
+また、各投稿に対しては、各ユーザーがコメントもできます。
