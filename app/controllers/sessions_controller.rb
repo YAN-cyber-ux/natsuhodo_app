@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-      
+      # ユーザーログイン後にユーザー情報のページにリダイレクトする
     else
-      
-      render 'new', status: :unprocessable_entity
+      flash[:danger] = 'Invalid email/password combination'
+      render 'new', status: :unprocessable_entity # 本当は正しくない
     end
   end
 
