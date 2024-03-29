@@ -4,12 +4,12 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.paginate(page: params[:page], per_page: 10)
   end
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts.paginate(page: params[:page], per_page: 10)
   end
 
   def new
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       reset_session
       log_in @user
-      flash[:success] = "Welcome to sample app!"
+      flash[:success] = "会員登録が完了しました!"
       redirect_to @user
     else
       render 'new', status: :unprocessable_entity
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "プロフを更新しました!"
       redirect_to @user 
     else
       render :edit, status: :unprocessable_entity
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash[:success] = "ユーザーを削除しました!"
     redirect_to users_url, status: :see_other
   end
 
