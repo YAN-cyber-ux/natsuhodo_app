@@ -1,14 +1,48 @@
+<% if logged_in? %>
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
 <div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
+
+<%= image_tag "natsuhodo.png", alt: "Natsuhodo logo", width: "400" %>
 
   <h2>
-    This is the home page for the
-    <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
-    sample application.
+  「懐かしい」で繋がる、<br>
+    ノスタルジックなSNS
   </h2>
 
-  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
-</div>
+  <p>
+  「忘れかけていたけど、確かに昔そういうのあったよね!?」<br>
 
-<%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200"),
-                      "https://rubyonrails.org/" %>
+  こんな感じで、他の人と打ち解けた経験がある人は多いのではないでしょうか?<br>
+
+  流行語、お笑い、映画、アニメ、ゲーム、食べ物、おもちゃ、音楽、ファッション、イベント、テレビ番組、CM、などなど、<br>
+
+  このアプリは、<br>
+
+  そんな「懐かしい!」を大喜利形式で共有して、色んな人が打ち解けるような場を作りたいと思っています。<br>
+
+  各投稿には、なつポイント(仮)と呼ばれる点数を用意し、各投稿に対して各ユーザが最大3ポイントまで点数をつけられる仕組みになっています。<br>
+
+  また、各投稿に対しては、各ユーザーがコメントもできます。<br>
+
+  みなさんの「懐かしい!」を通して、多くの交流が生まれることを願っています。<br>
+
+  ※仕様は変更になる場合があります。開発中のため、MVPリリースまでしばらくお待ちください。<br>
+  </p>
+
+  <%= link_to "Comming soon...", '#', class: "btn btn-lg btn-primary" %>
+</div>
+<% end %>
